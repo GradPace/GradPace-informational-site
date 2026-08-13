@@ -12,5 +12,5 @@ dependencies = [
 
 [dependency-groups]
 prod = [
-    "gunicorn>=25.0.3",
+    "gunicorn>=26.0.0",
 ]
