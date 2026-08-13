@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "flask>=3.1.2",
-    "flask-caching>=2.3.0",
+    "flask-caching>=2.4.1",
     "flask-compress>=1.24",
 ]
 
