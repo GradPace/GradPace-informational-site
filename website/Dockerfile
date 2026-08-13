@@ -1,4 +1,4 @@
-FROM python:3.12-alpine AS build
+FROM python:3.14-alpine AS build
 
 # Install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
@@ -16,7 +16,7 @@ RUN uv sync --frozen --no-dev --group prod
 COPY . .
 
 # Production stage
-FROM python:3.12-alpine
+FROM python:3.14-alpine
 
 WORKDIR /app
 
