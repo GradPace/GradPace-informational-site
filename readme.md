@@ -7,6 +7,7 @@
 [![Dependabot Updates](https://github.com/GradPace/GradPace-informational-site/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/GradPace/GradPace-informational-site/actions/workflows/dependabot/dependabot-updates)
 
 Flask web application with automatic Docker builds to GitHub Container Registry and nginx-proxy for production deployment.
+</div>
 
 ## Features
 
@@ -126,5 +127,3 @@ See [DEVELOPMENT.md](DEVELOPMENT.md) and [MAKEFILE.md](MAKEFILE.md) for detailed
 - **Force redeploy**: `make compose-down && make deploy`
 
 See [MAKEFILE.md](MAKEFILE.md) for all commands and [DEVELOPMENT.md](DEVELOPMENT.md) for development troubleshooting.
-
-</div>
