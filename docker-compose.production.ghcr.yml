@@ -5,7 +5,7 @@ services:
     environment:
       - FLASK_ENV=production
       - SECRET_KEY_FILE=/run/secrets/flask_secret_key
-      - VIRTUAL_HOST=gradpace.steyaert.xyz
+      - VIRTUAL_HOST=gradpace-info.steyaert.xyz
       - VIRTUAL_PORT=8000
     secrets:
       - flask_secret_key
