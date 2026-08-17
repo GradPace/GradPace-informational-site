@@ -9,13 +9,23 @@ updates:
     directory: "website/" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
+      timezone: "America/New_York"
   
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
+      timezone: "America/New_York"
   
   - package-ecosystem: "docker" # See documentation for possible values
     directory: "website/" # Location of package manifests
     schedule:
       interval: "weekly"
+      day: "tuesday"
+      time: "09:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 20
