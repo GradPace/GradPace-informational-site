@@ -9,8 +9,8 @@ updates:
     directory: "website/" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "tuesday"
-      time: "12:00"
+      day: "monday"
+      time: "10:00"
       timezone: "America/New_York"
     open-pull-requests-limit: 20
   
@@ -18,7 +18,7 @@ updates:
     directory: "website/" # Location of package manifests
     schedule:
       interval: "weekly"
-      day: "tuesday"
-      time: "12:00"
+      day: "monday"
+      time: "10:00"
       timezone: "America/New_York"
     open-pull-requests-limit: 20
