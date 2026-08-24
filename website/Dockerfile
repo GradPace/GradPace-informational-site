@@ -10,7 +10,9 @@ WORKDIR /app
 COPY pyproject.toml uv.lock* ./
 
 # Install dependencies into a virtual environment
-RUN uv sync --frozen --no-dev --group prod
+ENV UV_LINK_MODE=copy
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --frozen --no-dev --group prod
 
 # Copy application code
 COPY . .
