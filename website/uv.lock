@@ -266,7 +266,7 @@ requires-dist = [
 ]
 
 [package.metadata.requires-dev]
-prod = [{ name = "gunicorn", specifier = ">=26.0.0" }]
+prod = [{ name = "gunicorn", specifier = ">=26.1.0" }]
 
 [[package]]
 name = "pycparser"
