@@ -262,7 +262,7 @@ prod = [
 requires-dist = [
     { name = "flask", specifier = ">=3.1.2" },
     { name = "flask-caching", specifier = ">=2.5.1" },
-    { name = "flask-compress", specifier = ">=1.24" },
+    { name = "flask-compress", specifier = ">=1.25" },
 ]
 
 [package.metadata.requires-dev]
