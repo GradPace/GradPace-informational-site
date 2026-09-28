@@ -7,7 +7,7 @@ requires-python = ">=3.14"
 dependencies = [
     "flask>=3.1.2",
     "flask-caching>=2.5.1",
-    "flask-compress>=1.24",
+    "flask-compress>=1.25",
 ]
 
 [dependency-groups]
