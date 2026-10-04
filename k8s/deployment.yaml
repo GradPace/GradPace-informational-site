@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+  namespace: gradpace-info
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      imagePullSecrets:
+        - name: ghcr-pull
+      containers:
+        - name: web
+          # CI overrides this with `kubectl set image deployment/web
+          # web=ghcr.io/.../flask-app:sha-<short>` - :latest here is only
+          # the manual-apply default.
+          image: ghcr.io/gradpace/gradpace-informational-site/flask-app:latest
+          env:
+            - name: FLASK_ENV
+              value: production
+            - name: SECRET_KEY_FILE
+              value: /run/secrets/flask-secret-key/secret-key
+          resources:
+            requests:
+              cpu: 50m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 256Mi
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: flask-secret-key
+              mountPath: /run/secrets/flask-secret-key
+              readOnly: true
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8000
+              httpHeaders:
+                - name: Host
+                  value: gradpace-info.steyaert.xyz
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 5
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 8000
+              httpHeaders:
+                - name: Host
+                  value: gradpace-info.steyaert.xyz
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 5
+      volumes:
+        - name: flask-secret-key
+          secret:
+            secretName: flask-secret-key
