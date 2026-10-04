@@ -13,6 +13,10 @@ spec:
       labels:
         app: web
     spec:
+      # Only gradpace (and the future LLM service) should ever land on
+      # steyaert-worker - everything else stays pinned to the manager.
+      nodeSelector:
+        kubernetes.io/hostname: steyaert-mgr
       imagePullSecrets:
         - name: ghcr-pull
       containers:
@@ -24,8 +28,6 @@ spec:
           env:
             - name: FLASK_ENV
               value: production
-            - name: SECRET_KEY_FILE
-              value: /run/secrets/flask-secret-key/secret-key
           resources:
             requests:
               cpu: 50m
@@ -35,10 +37,6 @@ spec:
               memory: 256Mi
           ports:
             - containerPort: 8000
-          volumeMounts:
-            - name: flask-secret-key
-              mountPath: /run/secrets/flask-secret-key
-              readOnly: true
           readinessProbe:
             httpGet:
               path: /
@@ -61,7 +59,3 @@ spec:
             periodSeconds: 10
             timeoutSeconds: 5
             failureThreshold: 5
-      volumes:
-        - name: flask-secret-key
-          secret:
-            secretName: flask-secret-key
