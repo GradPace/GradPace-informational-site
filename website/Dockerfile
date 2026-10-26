@@ -1,4 +1,4 @@
-FROM python:3.14-alpine AS build
+FROM python:3.15-alpine AS build
 
 # Install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
@@ -18,7 +18,7 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 COPY . .
 
 # Production stage
-FROM python:3.14-alpine
+FROM python:3.15-alpine
 
 WORKDIR /app
 
