@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+{% from 'components/pdf-viewer.html' import pdf_viewer %}
+
+{% set active_page = 'lab2' %}
+
+{% block title %}Lab 2 {% endblock %}
+{% block description %}GradPace Lab 2 Outline - Team Copper's Lab 2 documents for Old Dominion University Computer Science.{% endblock %}
+{% block keywords %}GradPace Lab 2, lab document, ODU CS project, Team Copper{% endblock %}
+
+{% block css %}
+
+<!-- Preload page-specific CSS -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" as="style">
+
+<!-- Load CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="hero-section">
+    <h1 class="display-6">Lab 2</h1>
+</div>
+
+<!-- Lab 2 -->
+<div id="individual" style="scroll-margin-top: 62px;"></div>
+<section id="lab-2-dawson" class="section-card">
+    <h2 class="section-title">Lab 2 - Dawson Fromm</h2>
+    {{ pdf_viewer("GradPace Lab 2 - Dawson Fromm", "pdfs/lab2-dawson.pdf") }}
+</section>
+
+<section id="lab-2-carly" class="section-card">
+    <h2 class="section-title">Lab 2 - Carlycia Mathis</h2>
+    {{ pdf_viewer("GradPace Lab 2 - Carlycia Mathis", "pdfs/Lab2-Carlycia.pdf") }}
+</section>
+
+<section id="lab-2-aaron" class="section-card">
+    <h2 class="section-title">Lab 2 - Aaron Killingbeck</h2>
+    {{ pdf_viewer("GradPace Lab 2 - Aaron Killingbeck", "pdfs/lab2-aaron.pdf") }}
+</section>
+
+<section id="lab-2-jj" class="section-card">
+    <h2 class="section-title">Lab 2 - James Wile</h2>
+    {{ pdf_viewer("GradPace Lab 2 - James Wile", "pdfs/lab2-james.pdf") }}
+</section>
+
+<section id="lab-2-stephen" class="section-card">
+    <h2 class="section-title">Lab 2 - Stephen Steyaert</h2>
+    {{ pdf_viewer("GradPace Lab 2 - Stephen Steyaert", "pdfs/lab2-steve.pdf") }}
+</section>
+
+<section id="lab-2-nate" class="section-card">
+    <h2 class="section-title">Lab 2 - Nate Balcha</h2>
+    {{ pdf_viewer("GradPace Lab 2 - Nate Balcha", "pdfs/Lab2-Nate_Balcha.pdf") }}
+</section>
+
+<section id="outline" class="section-card">
+    <h2 class="section-title">Lab 2 - Section 3</h2>
+    {{ pdf_viewer("GradPace Lab 2 Section 3", "pdfs/lab2_section3.pdf") }}
+</section>
+
+{% endblock %}

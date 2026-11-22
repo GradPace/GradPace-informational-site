@@ -163,6 +163,15 @@ def lab_one():
         return _cached()
     return render_template('lab1.html')
 
+@blueprint.route('/lab-2')
+def lab_two():
+    if cache:
+        @cache.cached(timeout=86_400, key_prefix='lab_two')
+        def _cached():
+            return render_template('lab2.html')
+        return _cached()
+    return render_template('lab2.html')
+
 @blueprint.route('/deliverables')
 def deliverables():
     if cache:
