@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% from 'components/presentation-iframe.html' import presentation_iframe %}
-{% set active_page = 'protoWip' %}
-{% block title %}Prototype Work-in-Progress Presentation{% endblock %}
-{% block description %}GradPace Prototype WIP - Team Copper's ongoing prototype slideshow for Old Dominion University Computer Science project.{% endblock %}
-{% block keywords %}GradPace prototype, prototype, work in progress, ODU project, Team Copper presentation{% endblock %}
+
+{% set active_page = 'prototypeV0' %}
+
+{% block title %}Prototype Presentation Version 0{% endblock %}
+{% block description %}GradPace Prototype Presentation Version 0 - Team Copper's prototype presentation for Old Dominion University Computer Science.{% endblock %}
+{% block keywords %}GradPace prototype, prototype presentation, ODU CS project, Team Copper prototype slides{% endblock %}
 
 {% block css %}
 <!-- Preconnect to Google Docs for embedded presentation -->
@@ -25,7 +27,7 @@
         Presentation
         <i class="bi bi-file-earmark-pdf-fill" style="font-size: .95rem;"></i>
     </a>
-    Work-in-Progress
+    Version 0
 </p>
 {{ presentation_iframe("https://docs.google.com/presentation/d/e/2PACX-1vQDufwoiK3AjyYfVEAd9OaAdat8OAstaBKf_HPfkpqnBvZ86k3ferMXhK9HCr9WQT83VZJojSMJIueQ/pubembed") }}
 {% endblock %}

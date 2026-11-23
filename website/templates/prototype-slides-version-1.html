@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% from 'components/presentation-iframe.html' import presentation_iframe %}
+
+{% set active_page = 'prototypeV1' %}
+
+{% block title %}Prototype Presentation Version 1{% endblock %}
+{% block description %}GradPace Prototype Presentation Version 1 - Team Copper's prototype presentation for Old Dominion University Computer Science.{% endblock %}
+{% block keywords %}GradPace prototype, prototype presentation, ODU CS project, Team Copper prototype slides{% endblock %}
+
+{% block css %}
+<!-- Preconnect to Google Docs for embedded presentation -->
+<link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+<!-- Preload page-specific CSS -->
+<link rel="preload" href="{{ url_for('static', filename='css/feasibility.min.css') }}" as="style">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" as="style">
+
+<!-- Load CSS -->
+<link href="{{ url_for('static', filename='css/feasibility.min.css') }}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+{% endblock %}
+
+{% block content %}
+<p class="h3 text-center">
+    Prototype
+    <a href="https://docs.google.com/presentation/d/1fIn0OcC1epFuTRi4z_BMvK6kB3Ty4d_45zjGVBIhJJc/export/pdf" target="_blank" rel="noopener noreferrer">
+        Presentation
+        <i class="bi bi-file-earmark-pdf-fill" style="font-size: .95rem;"></i>
+    </a>
+    Version 1
+</p>
+{{ presentation_iframe("https://docs.google.com/presentation/d/e/2PACX-1vReK5boRzn5I63T2Mq-ghWHQ1SbWZSME5iOSHjbV6_U35vSGoLj1wrYHKV2ggQAiUhRu_u9Y2HGo8Kj/pubembed") }}
+{% endblock %}
