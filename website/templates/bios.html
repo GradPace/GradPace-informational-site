@@ -110,5 +110,15 @@
     <p class="bio-role text-center">Frontend Developer</p>
     <p>Nate is a Senior pursuing a BS in Computer Science at ODU. He has experience with Java and C. In his free time, he likes to read books and travel.</p>
 </section>
+
+<section class="section-card">
+    <picture>
+        <source srcset="{{ url_for('static', filename='images/bios/Jacob-Cook.webp') }}" type="image/webp">
+        <img src="{{ url_for('static', filename='images/bios/Jacob-Cook.png') }}" alt="Jacob Cook" class="bio-image" loading="lazy">
+    </picture>
+    <h3 class="section-title text-center">Jacob Cook</h3>
+    <p class="bio-role text-center">Mentorr</p>
+    <p>Jacob Cook is an ODU Computer Science alumnus, IT Instructor at the Southern Virginia Higher Education Center, and founder/CEO of Southside Tech Services. He has built a career spanning software development, general IT, and hands-on education, while also guiding students and businesses in adopting technology effectively. Jacob is passionate about mentoring, and he enjoys helping students bridge the gap between classroom learning and the real-world challenges of a career in technology. </p>
+</section>
 </div>
 {% endblock %}
