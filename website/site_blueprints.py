@@ -166,7 +166,7 @@ def prototype_presentation_v2():
 @blueprint.route('/prototype-v3')
 def prototype_presentation_v3(): # Change to v3 on next iteration
     if cache:
-        @cache.cached(timeout=3_600, key_prefix='prototype_presentation_wip')
+        @cache.cached(timeout=3_600, key_prefix='prototype_presentation_v3')
         def _cached():
             return render_template('prototype-slides-version-3.html')
         return _cached()
