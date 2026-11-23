@@ -139,7 +139,7 @@ def design_version_four():
 @blueprint.route('/prototype-v0')
 def prototype_presentation_v0():
     if cache:
-        @cache.cached(timeout=3_600, key_prefix='prototype_presentation_v0')
+        @cache.cached(timeout=86_400, key_prefix='prototype_presentation_v0')
         def _cached():
             return render_template('prototype-slides-version-0.html')
         return _cached()
@@ -148,7 +148,7 @@ def prototype_presentation_v0():
 @blueprint.route('/prototype-v1')
 def prototype_presentation_v1():
     if cache:
-        @cache.cached(timeout=3_600, key_prefix='prototype_presentation_v0')
+        @cache.cached(timeout=86_400, key_prefix='prototype_presentation_v0')
         def _cached():
             return render_template('prototype-slides-version-0.html')
         return _cached()
@@ -157,7 +157,7 @@ def prototype_presentation_v1():
 @blueprint.route('/prototype-v2')
 def prototype_presentation_v2():
     if cache:
-        @cache.cached(timeout=3_600, key_prefix='prototype_presentation_v0')
+        @cache.cached(timeout=86_400, key_prefix='prototype_presentation_v0')
         def _cached():
             return render_template('prototype-slides-version-0.html')
         return _cached()
@@ -166,7 +166,7 @@ def prototype_presentation_v2():
 @blueprint.route('/prototype-v3')
 def prototype_presentation_v3(): # Change to v3 on next iteration
     if cache:
-        @cache.cached(timeout=3_600, key_prefix='prototype_presentation_v3')
+        @cache.cached(timeout=86_400, key_prefix='prototype_presentation_v3')
         def _cached():
             return render_template('prototype-slides-version-3.html')
         return _cached()
